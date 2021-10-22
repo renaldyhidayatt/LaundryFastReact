@@ -1,16 +1,22 @@
 import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit";
 import paginationFactory from "react-bootstrap-table2-paginator";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import BootstrapTable from "react-bootstrap-table-next";
 import { Link } from "react-router-dom";
 import Error from "../../Error";
 import Loader from "../../Loader";
+import { deleteMember } from "../../../redux/action/member.action";
 
 const { SearchBar } = Search;
 
 const TableMember = (props) => {
   const member = useSelector((state) => state.memberReducer);
   const { members, loading, error } = member;
+  const dispatch = useDispatch();
+
+  const HandleDelete = (id) => {
+    dispatch(deleteMember(id));
+  };
 
   const defaultSorted = [
     {
@@ -59,13 +65,16 @@ const TableMember = (props) => {
       formatter: (rowContent, row) => {
         return (
           <div>
-            <Link to={"/admin/agent/update/" + row.id}>
+            <Link to={"/admin/member/update/" + row.id}>
               <button className="btn btn-primary mr-2">
                 <i className="fa fa-edit"></i> Edit
               </button>
             </Link>
 
-            <button className="btn btn-danger mr-2">
+            <button
+              className="btn btn-danger mr-2"
+              onClick={() => HandleDelete(row.id)}
+            >
               <i className="fa fa-trash"></i> Delete
             </button>
           </div>

@@ -26,6 +26,10 @@ class MemberService:
 
         return Response(content="Bisa", status_code=status.HTTP_200_OK)
 
+    def memberById(id: int):
+        db = Session(engine)
+        return db.query(Member).filter(Member.id == id).first()
+
     def updateMember(id: int, request: MemberSchema):
         db = Session(engine)
         db_update = db.query(Member).filter(Member.id == id).first()

@@ -20,6 +20,11 @@ def updateMember(id: int, request: MemberSchema):
     return MemberService.updateMember(id=id, request=request)
 
 
+@router.get("/{id}")
+def MemberId(id: int):
+    return MemberService.memberById(id=id)
+
+
 @router.delete("/{id}")
 def deleteMember(id: int):
     return MemberService.deleteMember(id=id)
