@@ -16,6 +16,11 @@ def createOutlet(request: OutletSchema):
     return OutletService.createOutlet(request=request)
 
 
+@router.get("/{id}")
+def getOutletId(id: int):
+    return OutletService.getByIdOutlet(id=id)
+
+
 @router.post("/{id}")
 def updateOutlet(id: int, request: OutletSchema):
     return OutletService.updateOutlet(id=id, request=request)

@@ -17,6 +17,11 @@ class OutletService:
 
         return "Bisa"
 
+    def getByIdOutlet(id: int):
+        db = Session(engine)
+
+        return db.query(Outlet).filter(Outlet.id == id).first()
+
     def updateOutlet(id: int, request: OutletSchema):
         db = Session(engine)
         db_update = db.query(Outlet).filter(Outlet.id == id).first()

@@ -37,7 +37,7 @@ const FormAuth = (props) => {
               className="form-control form-control-user"
               id="exampleInputEmail"
               aria-describedby="emailHelp"
-              placeholder="Enter Username"
+              placeholder="Enter Name ..."
               value={props.name}
               onChange={props.onChangeName}
             />

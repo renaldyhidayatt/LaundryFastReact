@@ -8,6 +8,22 @@ import {
   updateMemberReducer,
 } from "./member.reducer";
 
+import {
+  outletListReducer,
+  addOutletReducer,
+  updateOutletReducer,
+  deleteOutletReducer,
+  getOutletIdReducer,
+} from "./outlet.reducer";
+
+import {
+  paketListReducer,
+  addPaketReducer,
+  updatePaketReducer,
+  getPaketIdReducer,
+  deletePaketReducer,
+} from "./paket.reducer";
+
 const rootReducer = combineReducers({
   registerReducer: registerUserReducer,
   authReducer: loginUserReducer,
@@ -16,6 +32,16 @@ const rootReducer = combineReducers({
   updateMemberReducer: updateMemberReducer,
   getMemberReducer: getmemberIdReducer,
   deleteMemberReducer: deleteMemberReducer,
+  outletListReducer: outletListReducer,
+  addOutletReducer: addOutletReducer,
+  updateOutletReducer: updateOutletReducer,
+  deleteOutletReducer: deleteOutletReducer,
+  getOutletIdReducer: getOutletIdReducer,
+  paketListReducer,
+  addPaketReducer,
+  updatePaketReducer,
+  getPaketIdReducer,
+  deletePaketReducer,
 });
 
 export default rootReducer;

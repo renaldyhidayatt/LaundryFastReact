@@ -5,7 +5,7 @@ export const registerUser = (user) => (dispatch) => {
   dispatch({ type: "USER_REGISTER_REQUEST" });
 
   axios
-    .post("/users/register", user)
+    .post("/users", user)
     .then((res) => {
       dispatch({ type: "USER_REGISTER_SUCCESS" });
       console.log(res);

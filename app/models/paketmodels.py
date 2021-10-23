@@ -6,4 +6,5 @@ class Paket(SQLModel, table=True):
     id: Optional[int] = Field(primary_key=True, index=True)
     jenis_paket: str
     nama: str
+    harga: str
     outlet_id: int

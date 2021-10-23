@@ -22,7 +22,7 @@ function RegisterPage() {
     setName(name);
   };
 
-  const onChangeEmaail = (e) => {
+  const onChangeEmail = (e) => {
     const email = e.target.value;
     setEmail(email);
   };
@@ -50,9 +50,9 @@ function RegisterPage() {
         login={false}
         HandleSubmit={HandleRegister}
         name={name}
-        onchangeName={onChangeName}
+        onChangeName={onChangeName}
         email={email}
-        onChangeEmaail={onChangeEmaail}
+        onChangeEmaail={onChangeEmail}
         password={password}
         onChangePassword={onChangePassword}
       />

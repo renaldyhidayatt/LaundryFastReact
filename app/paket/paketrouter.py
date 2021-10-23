@@ -15,6 +15,11 @@ def createPaket(request: PaketSchema):
     return PaketService.createpaket(request=request)
 
 
+@router.get("/{id}")
+def getPaketid(id: int):
+    return PaketService.getIdPaket(id=id)
+
+
 @router.post("/{id}")
 def updatePaket(id: int, request: PaketSchema):
     return PaketService.updatePaket(id=id, request=request)
